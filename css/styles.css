@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+
+:root{
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Off-white: hsl(36, 100%, 99%);
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);    
+    --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body {
+    background: var(--Off-white);
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+/*========== Navigation ===========*/
+
+.header {
+    box-shadow: none;
+    background-color: var(--Off-white);
+    display: flex;
+    height: 60px!important;
+    justify-content: flex-end;
+    margin: 0 auto;
+    max-width: 100%;
+    overflow: hidden; 
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+#logo { 
+    height: 30px;
+    margin: 10px;
+    width:40px;
+}
+
+#sidebarMenu {
+    background: var(--Off-white);
+    height: 100%;
+    left: 0;
+    margin-top: 60px;
+    position: fixed;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
+    width: 250px;      
+}
+
+.sidebarMenuInner li{
+    list-style: none;
+    padding: 20px;
+}
+
+.sidebarMenuInner li a{
+    color: var(--Dark-grayish-blue);
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;            
+}
+
+input[type="checkbox"]:checked ~ #sidebarMenu {
+    transform: translateX(0);
+}
+
+input[type=checkbox] {
+    display: none;
+    transition: all 0.3s;   
+}
+
+.sidebarIconToggle {
+    cursor: pointer;
+    height: 100%;
+    left: 15px;
+    position: absolute;
+    top: 22px;
+    transition: all 0.3s;
+    width: 22px;
+    z-index: 99;
+}
+
+.spinner {
+    background-color: var(--Very-dark-blue);
+    height: 3px;
+    position: absolute;
+    transition: all 0.3s;
+    width: 100%;   
+}
+
+.horizontal {
+    float: left;
+    margin-top: 3px;
+    position: relative;
+    transition: all 0.3s; 
+}
+
+.diagonal.part-1 {
+    float: left;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.diagonal.part-2 {
+    float: left;
+    margin-top: 3px;
+    position: relative;
+    transition: all 0.3s;  
+}
+
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+    opacity: 0;
+    transition: all 0.3s; 
+}
+
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+    margin-top: 8px;
+    transform: rotate(135deg);
+    transition: all 0.3s;     
+}
+
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+    margin-top: -9px;
+    transform: rotate(-135deg);
+    transition: all 0.3s; 
+}
+
+/*========== Content ==========*/
+
+#principal {
+    text-align: center;
+}
+
+#principal h1 {
+    font-weight: bold;
+    margin-left: 20px;
+    text-align: left; 
+}
+
+#principal p {
+    color: var(--Dark-grayish-blue);
+    line-height: 2;
+    margin: 20px;
+    text-align: left;
+}
+
+#btn {
+    background-color: var(--Soft-red);
+    font-weight: bold;
+    margin-left: 20px;
+    padding: 10px;
+    width: 7rem;   
+}
+
+
+#btn a {
+    color: var(--Off-white);
+    text-decoration: none;
+}
+
+#main-image {
+    margin: 0 auto;
+    width: 22rem;   
+}
+
+#news {
+    background-color: var(--Very-dark-blue);
+    margin: 20px;
+    padding: 10px;
+}
+
+#news h2 {
+    color: var(--Soft-orange);
+    margin-left: 20px;
+}
+
+#news h3 {
+    color: var(--Off-white);
+    margin-left: 20px;  
+}
+
+#news p {
+    border-bottom: 1px solid var(--Soft-orange);
+    color: var(--Grayish-blue);
+    margin-left: 20px;
+    padding-bottom: 30px;
+    text-align: left;  
+}
+
+#news-aside {
+    padding: 8px;
+ }
+
+#news-aside img {
+   float: left;
+   width: 30%;
+}
+
+#news-aside .desc {
+    margin-left: 8rem;
+}
+
+#news-aside .desc p {
+    color: var(--Grayish-blue);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#news-aside .desc h3 {
+    color: var(--Very-dark-blue);
+    font-weight: bold;
+}
+
+#news-aside .desc span {
+    font-weight: bold;
+    color: var(-Dark-grayish-blue);
+}
+
+@media
